@@ -13,8 +13,9 @@ public class FraudDetectorService {
 
     public static void main(String[] args) {
         var fraudService = new FraudDetectorService();
-        var service = new KafkaService(GROUP_ID_NAME, TOPIC, fraudService::parse);
-        service.run();
+        try (var service = new KafkaService(GROUP_ID_NAME, TOPIC, fraudService::parse)){
+            service.run();
+        }
     }
 
     private void parse(ConsumerRecord<String, String> recordMessage) {
