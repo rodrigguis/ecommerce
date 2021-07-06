@@ -2,6 +2,8 @@ package br.com.alura.ecommerce;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
+import java.util.regex.Pattern;
+
 public class LogService {
     private static final String TOPIC_PATTERN;
     private static final String GROUP_ID_NAME;
@@ -13,8 +15,9 @@ public class LogService {
 
     public static void main(String[] args) {
         var logService = new LogService();
-        var service = new KafkaService(GROUP_ID_NAME, TOPIC_PATTERN, logService::parse);
-        service.run();
+        try (var service = new KafkaService(GROUP_ID_NAME, Pattern.compile(TOPIC_PATTERN), logService::parse)){
+            service.run();
+        }
     }
 
     private void parse(ConsumerRecord<String, String> recordMessage) {
