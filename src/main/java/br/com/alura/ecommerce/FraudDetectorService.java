@@ -2,6 +2,8 @@ package br.com.alura.ecommerce;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
+import java.util.Map;
+
 public class FraudDetectorService {
     private static final String TOPIC;
     private static final String GROUP_ID_NAME;
@@ -13,7 +15,7 @@ public class FraudDetectorService {
 
     public static void main(String[] args) {
         var fraudService = new FraudDetectorService();
-        try (var service = new KafkaService<>(GROUP_ID_NAME, TOPIC, fraudService::parse, Order.class)){
+        try (var service = new KafkaService<>(GROUP_ID_NAME, TOPIC, fraudService::parse, Order.class, Map.of())){
             service.run();
         }
     }
