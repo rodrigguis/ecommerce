@@ -13,7 +13,7 @@ public class EmailService {
 
     public static void main(String[] args) {
         var emailService = new EmailService();
-        try(var service = new KafkaService(GROUP_ID_NAME, TOPIC, emailService::parse)) {
+        try(var service = new KafkaService(GROUP_ID_NAME, TOPIC, emailService::parse, String.class)) {
             service.run();
         }
     }

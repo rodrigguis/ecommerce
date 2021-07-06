@@ -13,12 +13,12 @@ public class FraudDetectorService {
 
     public static void main(String[] args) {
         var fraudService = new FraudDetectorService();
-        try (var service = new KafkaService(GROUP_ID_NAME, TOPIC, fraudService::parse)){
+        try (var service = new KafkaService<>(GROUP_ID_NAME, TOPIC, fraudService::parse, Order.class)){
             service.run();
         }
     }
 
-    private void parse(ConsumerRecord<String, String> recordMessage) {
+    private void parse(ConsumerRecord<String, Order> recordMessage) {
         System.out.println("****************************************************");
         System.out.println("Processing new Order, checking for fraud");
         System.out.println(recordMessage.key());

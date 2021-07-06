@@ -15,7 +15,7 @@ public class LogService {
 
     public static void main(String[] args) {
         var logService = new LogService();
-        try (var service = new KafkaService(GROUP_ID_NAME, Pattern.compile(TOPIC_PATTERN), logService::parse)){
+        try (var service = new KafkaService(GROUP_ID_NAME, Pattern.compile(TOPIC_PATTERN), logService::parse, String.class)){
             service.run();
         }
     }

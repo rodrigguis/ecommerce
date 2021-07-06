@@ -2,7 +2,7 @@ package br.com.alura.ecommerce;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
-public interface ConsumerFunction {
+public interface ConsumerFunction<T> {
 
-    void consume(ConsumerRecord<String, String> recordMessage);
+    void consume(ConsumerRecord<String, T> recordMessage);
 }
