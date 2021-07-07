@@ -4,7 +4,6 @@ import br.com.alura.ecommerce.exceptions.GsonDeserializerException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.kafka.common.serialization.Deserializer;
-import org.apache.kafka.common.serialization.Serializer;
 
 import java.util.Map;
 

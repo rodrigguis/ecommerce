@@ -1,0 +1,6 @@
+/home/rrodrigues/Code/Alura/kafka/common-kafka/src/main/java/br/com/alura/ecommerce/GsonDeserializer.java
+/home/rrodrigues/Code/Alura/kafka/common-kafka/src/main/java/br/com/alura/ecommerce/KafkaDispatcher.java
+/home/rrodrigues/Code/Alura/kafka/common-kafka/src/main/java/br/com/alura/ecommerce/GsonSerializer.java
+/home/rrodrigues/Code/Alura/kafka/common-kafka/src/main/java/br/com/alura/ecommerce/KafkaService.java
+/home/rrodrigues/Code/Alura/kafka/common-kafka/src/main/java/br/com/alura/ecommerce/ConsumerFunction.java
+/home/rrodrigues/Code/Alura/kafka/common-kafka/src/main/java/br/com/alura/ecommerce/exceptions/GsonDeserializerException.java
